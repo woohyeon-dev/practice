@@ -6,7 +6,7 @@ const modeBtn = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
 
 const INITIAL_COLOR = "black";
-const CANVAS_SIZE = 700;
+const CANVAS_SIZE = 800;
 
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
