@@ -13,44 +13,46 @@ function handleOutput(event) {
         output.value = "";
     } else if(className.includes("result")) {
         if(operatorCheck) {
+            operatorCheck = true;
             equalsCheck = true;
             dotCheck = true;
             output.value = eval(output.value.replace(/×/g, "*").replace(/÷/g, "/"));
         }
     } else if(className.includes("operator")) {
-        if(equalsCheck) {
-            equalsCheck = false;
-        }
         if(operatorCheck) {
+            if(equalsCheck) {
+                equalsCheck = false;
+            }
             operatorCheck = false;
             dotCheck = true;
             output.value += event.target.value;
         }
     } else if(className.includes("dot")) {
-        if(equalsCheck) {
-            equalsCheck = false;
-        }
         if(operatorCheck) {
+            if(equalsCheck) {
+                equalsCheck = false;
+            }
             operatorCheck = false;
             if(dotCheck) {
-                dotCheck = false;
                 output.value += event.target.value;
+                dotCheck = false;
             }
         }
+            
     } else {
-        if(output.value === '0' || equalsCheck) {
-            equalsCheck = false;
-            output.value = "";
-        }
         if(output.value.length+1 <= output.maxLength) {
-            operatorCheck = true;
+            if(output.value === '0') {
+                output.value = "";
+            }
+            if(equalsCheck) {
+                equalsCheck = false;
+                operatorCheck = false;
+                output.value = "";
+            } 
             output.value += event.target.value;
-        }
+            operatorCheck = true;
+        }    
     }
-}
-
-function checkExpression() {
-
 }
 
 buttons.map(button => {
