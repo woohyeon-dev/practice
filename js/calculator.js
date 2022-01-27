@@ -7,34 +7,35 @@ let equalsCheck = false;
 let dotCheck = true;
 
 function handleOutput(event) {
-    const className = event.target.className;
-
+    const buttonName = event.target.className;
+    const buttonValue = event.target.value;
+    
     if(className.includes("clear")) {
         output.value = "";
-    } else if(className.includes("result")) {
+    } else if(buttonName.includes("result")) {
         if(operatorCheck) {
             operatorCheck = true;
             equalsCheck = true;
             dotCheck = true;
             output.value = eval(output.value.replace(/×/g, "*").replace(/÷/g, "/"));
         }
-    } else if(className.includes("operator")) {
+    } else if(buttonName.includes("operator")) {
         if(operatorCheck) {
             if(equalsCheck) {
                 equalsCheck = false;
             }
             operatorCheck = false;
             dotCheck = true;
-            output.value += event.target.value;
+            output.value += buttonValue;
         }
-    } else if(className.includes("dot")) {
+    } else if(buttonName.includes("dot")) {
         if(operatorCheck) {
             if(equalsCheck) {
                 equalsCheck = false;
             }
             operatorCheck = false;
             if(dotCheck) {
-                output.value += event.target.value;
+                output.value += buttonValue;
                 dotCheck = false;
             }
         }
@@ -49,7 +50,7 @@ function handleOutput(event) {
                 operatorCheck = false;
                 output.value = "";
             } 
-            output.value += event.target.value;
+            output.value += buttonValue;
             operatorCheck = true;
         }    
     }
