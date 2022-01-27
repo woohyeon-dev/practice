@@ -16,15 +16,16 @@ body {
 
 .calculator {
     border: 2px solid black;
+    border-radius: 10px;
     background-color: lightgrey;
-    padding: 7px;
+    padding: 8px;
 }
 
 .calculator__form {
     display: grid;
     grid-template-columns: repeat(4, 85px);
     grid-template-rows: 95px repeat(5, 60px);
-    grid-gap: 7px;
+    grid-gap: 8px;
 
 }
 
@@ -32,7 +33,7 @@ body {
 .calculator__btns {
     border: 2px solid black;
     cursor: pointer;
-    background-color: white;
+    background-color: #dcd4c9;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -41,6 +42,7 @@ body {
     text-align: right;
     padding: 15px;
     font-size: 70px;
+    color: #44484b;
 }
 
 .calculator__btns:hover {
@@ -53,15 +55,16 @@ body {
 }
 
 .calculator__operator {
-    background-color: orange;
+    background-color: #44484b;
+    color: #dcd4c9;
 }
 
 .calculator__dot {
-    background-color: darkolivegreen;
+    background-color: #a6b09c;
 }
 
 .calculator__result {
-    background-color: goldenrod;
+    background-color: #f2bb68;
     grid-row: span 2;
 }
 
