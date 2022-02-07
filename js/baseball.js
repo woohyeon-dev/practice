@@ -2,6 +2,8 @@ const record = document.querySelector(".play-board__record")
 const display = document.querySelector(".play-board__display");
 const buttons = Array.from(document.querySelectorAll(".play-board__btns"));
 const circle = document.getElementsByClassName("play-board__circle");
+const modal = document.querySelector(".modal");
+const modalBtns = Array.from(document.querySelectorAll(".modal__content"));
 
 let answer;
 let result = [0, 0, 0];
@@ -14,6 +16,11 @@ function init() {
     makingAnswer();
     // answer=[1,2,3,4];
     display.value = "";
+    isFill = false;
+    gameCount = 0;
+    record.innerHTML = "";
+    initCircleColor();
+    result = [0, 0, 0];
 }
 
 // 서로 다른 네자리 랜덤 수 생성하는 함수
@@ -72,9 +79,13 @@ function writeRecord(inputValue) {
     if(gameCount < 14) {
         record.innerHTML += `<p>${inputValue} &nbsp; S: ${result[0]}, B: ${result[1]}, O: ${result[2]}</p>`
         gameCount++;
+        if(result[0] == 4) {
+            openModal();
+        }
+    } else {
+        openModal();
     }
 }
-
 
 // 원 색깔 초기화
 function initCircleColor() {
@@ -89,7 +100,7 @@ function initCircleColor() {
     }
 }
 
-// 버튼들의 이벤트 처리하는 함수
+// input 버튼들의 이벤트 처리하는 함수
 function handleOutput(e) {
     let buttonValue = e.target.innerText;
     switch(buttonValue) {
@@ -124,6 +135,32 @@ function handleOutput(e) {
             break;
     }
 }
+
+function openModal() {
+    modal.classList.remove("hidden");
+}
+
+function closeModal() {
+    modal.classList.add("hidden");
+}
+
+// modal 버튼들의 이벤트를 처리하는 함수
+function handleModalBtn(e) {
+    let btnValue = e.target.innerText;
+    switch(btnValue) {
+        case "CONTINUE":
+            closeModal();
+            break;
+        case "NEW GAME":
+            closeModal();
+            init();
+            break;
+    }
+}
+
+modalBtns.map(button => {
+    button.addEventListener("click", handleModalBtn);
+});
 
 buttons.map(button => {
     button.addEventListener("click", handleOutput);
