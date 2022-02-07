@@ -1,3 +1,4 @@
+const record = document.querySelector(".play-board__record")
 const display = document.querySelector(".play-board__display");
 const buttons = Array.from(document.querySelectorAll(".play-board__btns"));
 const circle = document.getElementsByClassName("play-board__circle");
@@ -5,6 +6,7 @@ const circle = document.getElementsByClassName("play-board__circle");
 let answer;
 let result = [0, 0, 0];
 let isFill = false;
+let gameCount = 0;
 
 // 게임 초기화 시키는 함수
 function init() {
@@ -33,12 +35,12 @@ function makingAnswer() {
 
 
 // 정답과 사용자가 입력한 값을 비교하는 함수
-function compareAnswer(value) {
+function compareAnswer(inputValue) {
     // result 요소 차례대로 strike, ball, out
     result = [0, 0, 0];
     for(let i=0; i<4; i++) {
-        if(value.indexOf(answer[i])+1) {
-            if(value.charAt(i) == answer[i]) {
+        if(inputValue.indexOf(answer[i])+1) {
+            if(inputValue.charAt(i) == answer[i]) {
                 result[0]++;
             } else {
                 result[1]++;
@@ -48,6 +50,7 @@ function compareAnswer(value) {
         }
     }
     colorizeCircles();
+    writeRecord(inputValue);
 }
 
 // 결과를 통해 원 색깔 칠하는 함수
@@ -62,6 +65,16 @@ function colorizeCircles() {
         circle[i+8].style.backgroundColor = "red";
     }
 }
+
+
+// 결과를 화면에 작성하는 함수
+function writeRecord(inputValue) {
+    if(gameCount < 14) {
+        record.innerHTML += `<p>${inputValue} &nbsp; S: ${result[0]}, B: ${result[1]}, O: ${result[2]}</p>`
+        gameCount++;
+    }
+}
+
 
 // 원 색깔 초기화
 function initCircleColor() {
@@ -84,12 +97,12 @@ function handleOutput(e) {
             // 문자열 초기화
             display.value = "";
             break;
-        case 'CE':
-            // 마지막 문자열 자르기
-            display.value = display.value.slice(0, -1);
-            break;
-        case 'OK':
-            // display.value 값을 전달하고 초기화
+            case 'CE':
+                // 마지막 문자열 자르기
+                display.value = display.value.slice(0, -1);
+                break;
+                case 'OK':
+                    // display.value 값을 전달하고 초기화
             // ok버튼은 입력한 수가 서로 다른 네자리 수 일 때만 누를 수 있도록 만들어야함
             const valueArr = display.value.split("");
             const set = Array.from(new Set(valueArr));
@@ -104,7 +117,10 @@ function handleOutput(e) {
                 initCircleColor();
             }
             // 전에 입력한 수와 다를 때만 입력되도록 만들어야함
-            display.value += buttonValue;
+            // 네자리까지만 입력되도록 만들어야함
+            if(display.value.length < 4) {
+                display.value += buttonValue;
+            }
             break;
     }
 }

@@ -14,6 +14,8 @@ body {
 }
 
 .play-board {
+    display: grid;
+    grid-template-columns: 200px 608px;
     border: 2px solid black;
     border-radius: 10px;
     background-color: lightgrey;
@@ -38,6 +40,7 @@ body {
     margin-right: 8px;
     width: 256px;
     padding: 10px;
+    background-color: #b2b2b2;
 }
 
 .play-board__text {
@@ -105,4 +108,13 @@ body {
 .play-board__ok {
     background-color: olive;
     grid-column: span 2;
+}
+
+.play-board__record {
+    grid-row: span 2;
+    margin-right: 8px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 15px;
+    color: black;
 }
