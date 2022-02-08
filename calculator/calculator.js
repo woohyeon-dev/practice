@@ -10,7 +10,7 @@ function handleOutput(event) {
     const buttonName = event.target.className;
     const buttonValue = event.target.value;
     
-    if(className.includes("clear")) {
+    if(buttonName.includes("clear")) {
         output.value = "";
     } else if(buttonName.includes("result")) {
         if(operatorCheck) {

@@ -31,7 +31,7 @@ body {
 
 /* pixel button */
 .pixel-btn:hover {
-    background: url(../img/pixel.png);
+    background: url(pixel.png);
     background-size: 180px;
     transition-delay: 0.8s;
     animation: animate 0.8s steps(8) forwards;
