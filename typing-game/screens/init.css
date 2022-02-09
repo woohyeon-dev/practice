@@ -1,0 +1,39 @@
+.init {
+    width: 500px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.init__keyboard-icon { 
+    color: #FB8C00;
+    font-size: 130px;
+}
+
+.init__dynamic {
+    height: 48px;
+    position: relative;
+}
+
+.init__text {
+    color: #FB8C00;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.init__text::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 4px;
+    height: 100%;
+    background-color: #FB8C00;
+}
+
+.active::after{
+    display: none;
+}

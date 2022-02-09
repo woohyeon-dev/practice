@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing game</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="board">
+        <section class="init">
+            <h1><i class="init__keyboard-icon material-icons-sharp">keyboard</i></h1>
+            <div class="init__dynamic">
+                <p class="init__text"></p>
+            </div>
+        </section>
+        <section class="setting">
+            <h1>GAME SETTING</h1>
+            <form action="#" class="setting__form">
+                <fieldset>
+                    <legend>Language</legend>
+                    <div class="setting__value">
+                        <input type="checkbox" id="korean" name="korean" checked>
+                        <label for="korean">Korean</label>
+                    </div>
+                    <div class="setting__value">
+                        <input type="checkbox" id="english" name="english">
+                        <label for="english">English</label>
+                    </div>
+                    <div class="setting__value">
+                        <input type="checkbox" id="japanese" name="japanese">
+                        <label for="japanese">Japanese</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Difficulty</legend>
+                    <div class="setting__value">
+                        <input type="checkbox" id="easy"  name="easy" checked>
+                        <label for="easy">Easy</label>
+                    </div>
+                    <div class="setting__value">
+                        <input type="checkbox" id="nomal" name="nomal">
+                        <label for="nomal">Nomal</label>
+                    </div>
+                    <div class="setting__value">
+                        <input type="checkbox" id="hard" name="hard">
+                        <label for="hard">Hard</label>
+                    </div>
+                </fieldset>
+                <input type="submit" class="setting__ok" value="OK"/>
+            </form>
+        </section>
+        <section class="play">
+
+        </section>
+        <section class="result">
+
+        </section>
+    </div>
+
+    <script src="begin.js"></script>
+</body>
+</html>
