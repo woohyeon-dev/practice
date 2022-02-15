@@ -11,55 +11,79 @@
 <body>
     <div class="board">
         <section class="init">
-            <h1><i class="init__keyboard-icon material-icons-sharp">keyboard</i></h1>
+            <h1><i class="init__keyboard material-icons-sharp">keyboard</i></h1>
             <div class="init__dynamic">
                 <p class="init__text"></p>
             </div>
         </section>
+
         <section class="setting">
             <h1>GAME SETTING</h1>
             <form action="#" class="setting__form">
                 <fieldset>
                     <legend>Language</legend>
                     <div class="setting__value">
-                        <input type="checkbox" id="korean" name="korean" checked>
+                        <input type="radio" id="korean" name="language" checked>
                         <label for="korean">Korean</label>
                     </div>
                     <div class="setting__value">
-                        <input type="checkbox" id="english" name="english">
+                        <input type="radio" id="english" name="language">
                         <label for="english">English</label>
                     </div>
                     <div class="setting__value">
-                        <input type="checkbox" id="japanese" name="japanese">
+                        <input type="radio" id="japanese" name="language">
                         <label for="japanese">Japanese</label>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>Difficulty</legend>
                     <div class="setting__value">
-                        <input type="checkbox" id="easy"  name="easy" checked>
+                        <input type="radio" id="easy" name="difficulty" checked>
                         <label for="easy">Easy</label>
                     </div>
                     <div class="setting__value">
-                        <input type="checkbox" id="nomal" name="nomal">
+                        <input type="radio" id="nomal" name="difficulty">
                         <label for="nomal">Nomal</label>
                     </div>
                     <div class="setting__value">
-                        <input type="checkbox" id="hard" name="hard">
+                        <input type="radio" id="hard" name="difficulty">
                         <label for="hard">Hard</label>
                     </div>
                 </fieldset>
-                <input type="submit" class="setting__ok" value="OK"/>
+                <input type="button" class="setting__ok" value="OK"/>
             </form>
         </section>
-        <section class="play">
 
+        <section class="play">
+            <div class="play__status-bar">
+                <div class="play__stamina">
+                    <div class="play__current-stamina"></div>
+                </div>
+                <i class="play__pause material-icons-outlined">pause</i>
+                <div class="play__timer">01:27</div>
+            </div>
+            <div class="play__game-board">
+                <!-- <i class="play__character material-icons-sharp">keyboard</i> -->
+            </div>
+            <div class="play__skill">스킬 키워드: 없음</div>
+            <!-- <div class="play__skill">SKILL KEYWORD: NONE</div> -->
         </section>
+
+        <!-- <div class="modal hidden">
+            <div class="modal__overlay"></div>
+            <div class="modal__contents">
+                <button class="modal__content modal__continue">CONTINUE</button>
+                <button class="modal__content modal__new">MENU</button>
+            </div>
+        </div> -->
+
         <section class="result">
 
         </section>
     </div>
 
-    <script src="begin.js"></script>
+    <script src="js/begin.js"></script>
+    <script src="js/setting.js"></script>
+    <script src="js/play.js"></script>
 </body>
 </html>

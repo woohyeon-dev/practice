@@ -1,0 +1,52 @@
+.play {
+    width: 600px;
+    height: 400px;
+    padding: 15px;
+    display: none;
+    color: #DDC6B6;
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+.play__status-bar {
+    height: 30px;
+    display: flex;
+}
+
+.play__pause {
+    border: 2px solid #DDC6B6;
+    padding: 1px;
+    margin-right: 15px;
+}
+
+.play__timer {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 1px 4px;
+    border: 2px solid #DDC6B6;
+}
+
+.play__game-board {
+    margin: 15px 0;
+    width: 570px;
+    height: 272px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #262223;
+    border: 2px solid #DDC6B6;
+}
+
+.play__character {
+    font-size: 100px;
+    color: #262223;
+}
+
+.play__skill {
+    width: 570px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 22px;
+    padding: 1px 4px;
+    border: 2px solid #DDC6B6;
+}

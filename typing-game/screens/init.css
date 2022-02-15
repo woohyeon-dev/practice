@@ -1,15 +1,16 @@
 .init {
-    width: 500px;
-    height: 350px;
+    width: 600px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.init__keyboard-icon { 
-    color: #FB8C00;
+.init__keyboard { 
+    color: #DDC6B6;
     font-size: 130px;
+    cursor: pointer;
 }
 
 .init__dynamic {
@@ -18,7 +19,7 @@
 }
 
 .init__text {
-    color: #FB8C00;
+    color: #DDC6B6;
     font-size: 40px;
     font-weight: bold;
 }
@@ -31,7 +32,7 @@
     right: -10px;
     width: 4px;
     height: 100%;
-    background-color: #FB8C00;
+    background-color: #DDC6B6;
 }
 
 .active::after{

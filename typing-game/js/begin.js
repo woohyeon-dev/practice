@@ -2,7 +2,7 @@ const initSection = document.querySelector(".init");
 const settingSection = document.querySelector(".setting");
 
 const text = document.querySelector(".init__text");
-const keyboardIcon = document.querySelector(".init__keyboard-icon");
+const keyboardIcon = document.querySelector(".init__keyboard");
 
 
 // icon을 눌렀을때 화면전환
@@ -39,7 +39,7 @@ function dynamic(strArr) {
             dynamic(strArr);
         }, 200);
     } else {
-        setTimeout(resetTyping, 3000);
+        setTimeout(resetTyping, 1000);
     }
 }
 setTimeout(resetTyping, 1000);
