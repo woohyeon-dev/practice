@@ -1,0 +1,1 @@
+const gameBoard = document.querySelector(".play__game-board");
