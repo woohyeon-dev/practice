@@ -108,12 +108,12 @@ function handleOutput(e) {
             // 문자열 초기화
             display.value = "";
             break;
-            case 'CE':
-                // 마지막 문자열 자르기
-                display.value = display.value.slice(0, -1);
-                break;
-                case 'OK':
-                    // display.value 값을 전달하고 초기화
+        case 'CE':
+            // 마지막 문자열 자르기
+            display.value = display.value.slice(0, -1);
+            break;
+        case 'OK':
+            // display.value 값을 전달하고 초기화
             // ok버튼은 입력한 수가 서로 다른 네자리 수 일 때만 누를 수 있도록 만들어야함
             const valueArr = display.value.split("");
             const set = Array.from(new Set(valueArr));
