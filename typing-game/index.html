@@ -57,29 +57,30 @@
         <section class="play">
             <div class="play__status-bar">
                 <i class="play__pause material-icons-outlined">pause</i>
-                <div class="play__timer">01:27</div>
+                <div class="play__play-time">00:00</div>
                 <div class="play__stamina">
                     <div class="play__current-stamina"></div>
                 </div>
             </div>
-            <div class="play__game-board"></div>
-            <div class="play__skill">스킬 키워드: 없음</div>
-            <!-- <div class="play__skill">SKILL KEYWORD: NONE</div> -->
-        </section>
-
-        <!-- <div class="modal hidden">
-            <div class="modal__overlay"></div>
-            <div class="modal__contents">
-                <button class="modal__content modal__continue">CONTINUE</button>
-                <button class="modal__content modal__new">MENU</button>
+            <canvas class="play__game-board"></canvas>
+            <div class="play__user-interface">
+                <div class="play__skill">스킬 키워드: 없음</div>
+                <input class="play__input" type= "text" autofocus/>
             </div>
-        </div> -->
-
-        <section class="result">
-
+            
         </section>
+
+        <div class="pause-modal hidden">
+            <div class="pause-modal__overlay"></div>
+            <div class="pause-modal__contents">
+                <button class="pause-modal__buttons">CONTINUE</button>
+                <button class="pause-modal__buttons">MENU</button>
+            </div>
+        </div>
+
     </div>
 
+    <script src="js/word.js"></script>
     <script src="js/begin.js"></script>
     <script src="js/setting.js"></script>
     <script src="js/play.js"></script>

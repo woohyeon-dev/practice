@@ -8,6 +8,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
+
 
 * {
     padding: 0;
@@ -28,6 +30,6 @@ body {
     width: 600;
     height: 400px;
     background-color: #262223;
-    border: 4px solid white;
+    border: 4px solid whitesmoke;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0,0.23);
 }

@@ -1,7 +1,7 @@
 .setting {
     width: 600px;
     height: 400px;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
     display: none;
     font-family: 'Covered By Your Grace', cursive;
@@ -50,7 +50,8 @@
     font-family: 'Covered By Your Grace', cursive;
     width: 25%;
     height: 40px;
-    margin-top: 10px;
+    margin-top: 8px;
+    cursor: pointer;
 }
 
 .setting__ok:hover {

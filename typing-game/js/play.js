@@ -1,1 +1,146 @@
-const gameBoard = document.querySelector(".play__game-board");
+const pause = document.querySelector(".play__pause");
+const pauseModal = document.querySelector(".pause-modal");
+const pauseModalBtns = Array.from(document.querySelectorAll(".pause-modal__buttons"));
+const playTime = document.querySelector(".play__play-time");
+const stamina = document.querySelector(".play__current-stamina");
+const canvas = document.querySelector(".play__game-board");
+const ctx = canvas.getContext("2d");
+const input = document.querySelector(".play__input");
+
+const GAME_WIDTH = 566;
+const GAME_HEIGHT= 266;
+
+canvas.width = GAME_WIDTH;
+canvas.height = GAME_HEIGHT;
+
+const FRAME = 60;
+let wordArr = koreanWords;
+let animation;
+let gamelanguage;
+let gameSpeed;
+let movingWordArr = [];
+let timer = 0;
+let currentStamina = 100;
+let second = 0;
+let minuate = 0;
+let correct = false;
+class MovingWord {
+    constructor(word, x, y) {
+        this.word = word;
+        this.x = x;
+        this.y = y;
+    }
+    draw() {
+        ctx.font = '15px Open Sans Condensed';
+        ctx.fillStyle = "#DDC6B6";
+        ctx.fillText(this.word, this.x, this.y);
+    }
+}
+
+pause.addEventListener('click', handlePause);
+
+pauseModalBtns.map(button => {
+    button.addEventListener('click', handlePauseBtns);
+});
+
+input.addEventListener('keyup', handleEnter);
+
+function handlePause(e) {
+    pauseModal.classList.toggle("hidden");
+    cancelAnimationFrame(animation);
+}
+
+function handlePauseBtns(e) {
+    let btnValue = e.target.innerText;
+    switch(btnValue) {
+        case "CONTINUE":
+            pauseModal.classList.toggle("hidden");
+            runFrame();
+            break;
+        case "MENU":
+            pauseModal.classList.toggle("hidden");
+            switchSettingScreen();
+            resetGame();
+            break;
+    }
+}
+
+function resetGame() {
+    movingWordArr = [];
+    timer = 0;
+    currentStamina = 100;
+    stamina.style.width = currentStamina + '%';
+    second = 0;
+    minuate = 0;
+    playTime.innerText = `${String(minuate).padStart(2, "0")}:${String(second).padStart(2,"0")}`;
+}
+
+function switchSettingScreen() {
+    setting.style.display = "block";
+    playSection.style.display = "none";
+}
+
+function handleEnter(e) {
+    let key = e.key || e.keyCode;
+    if (key === 'Enter' || key === 13) {
+        movingWordArr.forEach((a, i, o) => {
+            if(input.value == a.word) {
+                o.splice(i, 1);
+                input.value = "";
+                correct = true;
+            }
+        });
+        if(correct) {
+            input.style.boxShadow = "0 0 5px darkgreen"
+            input.style.borderColor= "darkgreen";
+            correct = false;
+        } else {
+            input.style.boxShadow = "0 0 5px red";
+            input.style.borderColor= "red";
+        }
+        input.value = "";
+    }
+}
+
+function runFrame() {
+    animation = requestAnimationFrame(runFrame);
+    timer++;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    if(timer%FRAME == 0) {
+        second++;
+        if(second == 60) {
+            minuate++;
+            second = 0;
+        }
+        playTime.innerText = `${String(minuate).padStart(2, "0")}:${String(second).padStart(2,"0")}`;
+
+        let index = timer/FRAME - 1;
+        if(index === wordArr.length - 1) {
+            timer = 0;
+        }
+        // x축은 0 고정, y축은 18~270의 랜덤 수
+        let movingWord = new MovingWord(wordArr[index], 0, Math.floor((Math.random()*247)+18));
+        movingWordArr.push(movingWord);
+    }
+
+    checkCollision();
+}
+
+function checkCollision() {
+    movingWordArr.forEach((a, i, o)=>{
+        if(a.x > GAME_WIDTH) {
+            o.splice(i, 1);
+            currentStamina -= 5 * a.word
+            .length;
+            if(currentStamina <= 0) {
+                currentStamina = 0;
+                cancelAnimationFrame(animation);
+            }
+            stamina.style.width = currentStamina + '%';
+        }
+        a.x++;
+        a.draw();
+    });
+}

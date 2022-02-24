@@ -5,9 +5,11 @@ const difficulty = document.getElementsByName("difficulty");
 const okBtn = document.querySelector(".setting__ok");
 const settingValueArr = [];
 
-function switchScreen() {
+function switchPlayScreen() {
     setting.style.display = "none";
     playSection.style.display = "block";
+    document.querySelector(".play__input").focus();
+    runFrame();
 }
 
 function clickOkBtn(e) {
@@ -22,8 +24,8 @@ function clickOkBtn(e) {
             settingValueArr.push(node.value);
         }
     });
-    
-    switchScreen();
+
+    switchPlayScreen();
 }
 
 okBtn.addEventListener("click", clickOkBtn);

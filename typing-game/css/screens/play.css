@@ -15,12 +15,16 @@
 .play__pause {
     border: 2px solid #DDC6B6;
     padding: 1px;
+    cursor: pointer;
 }
 
-.play__timer {
+.play__pause:hover {
+    transform: scale(0.95);
+}
+
+.play__play-time {
     font-size: 22px;
     font-weight: bold;
-    line-height: 28px;
     padding: 1px 4px;
     margin: 0 15px;
     border: 2px solid #DDC6B6;
@@ -34,15 +38,13 @@
 }
 
 .play__current-stamina {
-    width: 70%;
+    width: 100%;
     height: 100%;
     background-color: rgba(151,188,98,0.7);
 }
 
 .play__game-board {
     margin: 15px 0;
-    width: 570px;
-    height: 272px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,16 +52,80 @@
     border: 2px solid #DDC6B6;
 }
 
-.play__character {
-    font-size: 100px;
-    color: #262223;
-}
-
-.play__skill {
+.play__user-interface {
     width: 570px;
     height: 30px;
     font-size: 22px;
-    line-height: 28px;
+    display: flex;
+}
+
+.play__skill {
+    width: 420px;
+    height: 100%;
+    margin-right: 15px;
     padding: 1px 4px;
     border: 2px solid #DDC6B6;
+}
+
+.play__input {
+    width: 135px;
+    height: 100%;
+    border: 2px solid #DDC6B6;
+    text-align: center;
+    background-color: #262223;
+    font-weight: bold;
+    color: #DDC6B6;
+}
+
+.play__input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #DDC6B6;
+}
+
+.pause-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pause-modal__overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.pause-modal__contents {
+    position: relative;
+    width: 170px;
+    top: 0px;
+    text-align: center;
+    background-color: #262223;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #DDC6B6;
+    padding: 15px;
+}
+
+.pause-modal__buttons {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 20px;
+    border: 2px solid #DDC6B6;
+    background-color: #262223;
+    color: #DDC6B6;
+    height: 35px;
+    cursor: pointer;
+}
+
+.pause-modal__buttons:first-child {
+    margin-bottom: 15px;
+}
+
+.hidden {
+    display: none;
 }
