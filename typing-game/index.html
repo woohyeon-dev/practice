@@ -64,7 +64,7 @@
             </div>
             <canvas class="play__game-board"></canvas>
             <div class="play__user-interface">
-                <div class="play__skill">스킬 키워드: 없음</div>
+                <div class="play__skill"></div>
                 <input class="play__input" type= "text" autofocus/>
             </div>
             
@@ -81,10 +81,15 @@
         <div class="result-modal hidden">
             <div class="result-modal__overlay"></div>
             <div class="result-modal__contents">
-                <h1 class="result-modal__message"></h1>
-                <h2 class="result-modal__time">05:00</h2>
-                <button class="result-modal__buttons">RETRY</button>
-                <button class="result-modal__buttons">MENU</button>
+                <p class="result-modal__message">Success!</p>
+                <div class="result-modal__record">
+                    <p class="result-modal__time">Time: 05:00</p>
+                    <p class="result-modal__count">Typing words: 98</p>
+                </div>
+                <div class="result-modal__container">
+                    <button class="result-modal__buttons">RETRY</button>
+                    <button class="result-modal__buttons">MENU</button>
+                </div>
             </div>
         </div>
 

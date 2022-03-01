@@ -2,14 +2,13 @@
 @import "screens/init.css";
 @import "screens/setting.css";
 @import "screens/play.css";
+@import "screens/modal.css";
 
 /* fonts */
 @import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
 
 * {
     padding: 0;

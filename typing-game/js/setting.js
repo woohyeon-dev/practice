@@ -3,7 +3,11 @@ const playSection = document.querySelector(".play");
 const language = document.getElementsByName("language");
 const difficulty = document.getElementsByName("difficulty");
 const okBtn = document.querySelector(".setting__ok");
+const skill = document.querySelector(".play__skill");
+
 const settingValueArr = [];
+let skillArr = [];
+let skillText;
 
 let gameSpeed;
 let multiplier;
@@ -17,22 +21,29 @@ function switchPlayScreen() {
 }
 
 function applySetting() {
-
     // language setting
     switch(settingValueArr[0]) {
         case "korean":
             wordArr = JSON.parse(JSON.stringify(koreanWords));
             multiplier = 5;
+            skillArr = ["무적", "회복", "정지"];
+            skillText = "스킬 키워드 ( ";
             break;
         case "english":
             wordArr = JSON.parse(JSON.stringify(englishWords));
             multiplier = 3;
+            skillArr = ["invincible", "heal", "freeze"];
+            skillText = "skill keyword ( ";
             break;
         case "japanese":
             wordArr = JSON.parse(JSON.stringify(japaneseWords));
             multiplier = 2;
+            skillArr = ["むてき", "かいふく", "ていし"];
+            skillText = "スキルキーワード ( ";
             break;
     }
+    skill.innerText = skillText + skillArr.join(", ") + " )";
+    
     // difficulty setting
     switch(settingValueArr[1]) {
         case "easy":

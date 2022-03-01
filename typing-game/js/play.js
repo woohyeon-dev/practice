@@ -20,6 +20,7 @@ let currentStamina = 100;
 let second = 0;
 let minuate = 0;
 let correct = false;
+let godMode = false;
 
 class MovingWord {
     constructor(word, x, y) {
@@ -80,13 +81,23 @@ function switchSettingScreen() {
 function handleEnter(e) {
     let key = e.key || e.keyCode;
     if (key === 'Enter' || key === 13) {
-        movingWordArr.forEach((a, i, o) => {
-            if(input.value == a.word) {
-                o.splice(i, 1);
-                input.value = "";
-                correct = true;
-            }
-        });
+        if(input.value === "무적" || input.value === "invincible" || input.value === "むてき") {
+            invincible();
+        } else if (input.value === "회복" || input.value === "heal" || input.value === "かいふく") {
+            heal();
+        } else if (input.value === "정지" || input.value === "freeze" || input.value === "ていし") {
+            screenFreeze();
+        } else {
+            movingWordArr.forEach((a, i, o) => {
+                if(input.value === a.word) {
+                    o.splice(i, 1);
+                    input.value = "";
+                    correct = true;
+                }
+            });
+        }
+        skill.innerText = skillText + skillArr.join(", ") + " )";
+        
         if(correct) {
             input.style.boxShadow = "0 0 5px darkgreen"
             input.style.borderColor= "darkgreen";
@@ -96,6 +107,35 @@ function handleEnter(e) {
             input.style.borderColor= "red";
         }
         input.value = "";
+    }
+}
+
+function invincible() {
+    if(skillArr.includes(input.value)) {
+        godMode = true;
+        setTimeout(() => {
+            godMode = false;
+        }, 4000);
+        skillArr = skillArr.filter(word => word != input.value);
+    }
+}
+
+function heal() {
+    if(skillArr.includes(input.value)) {
+        currentStamina += 50;
+        if(currentStamina > 100) {
+            currentStamina = 100;
+        }
+        skillArr = skillArr.filter(word => word != input.value);
+        stamina.style.width = currentStamina + '%';
+    }
+}
+
+function screenFreeze() {
+    if(skillArr.includes(input.value)) {
+        cancelAnimationFrame(animation);
+        setTimeout(runFrame, 4000);
+        skillArr = skillArr.filter(word => word != input.value);
     }
 }
 
@@ -130,7 +170,9 @@ function checkCollision() {
     movingWordArr.forEach((a, i, o)=>{
         if(a.x > GAME_WIDTH) {
             o.splice(i, 1);
-            controlStamina(a);
+            if(!godMode) {
+                controlStamina(a);
+            }
         }
         a.x += gameSpeed;
         a.draw();
