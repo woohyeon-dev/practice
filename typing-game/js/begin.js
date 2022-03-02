@@ -4,7 +4,6 @@ const settingSection = document.querySelector(".setting");
 const text = document.querySelector(".init__text");
 const keyboardIcon = document.querySelector(".init__keyboard");
 
-
 // icon을 눌렀을때 화면전환
 function handleIconButton(e) {
     initSection.style.display = "none";

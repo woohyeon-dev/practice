@@ -1,12 +1,14 @@
-const pause = document.querySelector(".play__pause");
-const pauseModal = document.querySelector(".pause-modal");
-const pauseModalBtns = Array.from(document.querySelectorAll(".pause-modal__buttons"));
+// play
 const playTime = document.querySelector(".play__play-time");
 const stamina = document.querySelector(".play__current-stamina");
 const canvas = document.querySelector(".play__game-board");
-const ctx = canvas.getContext("2d");
 const input = document.querySelector(".play__input");
+const pause = document.querySelector(".play__pause");
+// play-modal
+const pauseModal = document.querySelector(".pause-modal");
+const pauseModalBtns = Array.from(document.querySelectorAll(".pause-modal__buttons"));
 
+const ctx = canvas.getContext("2d");
 const GAME_WIDTH = 566;
 const GAME_HEIGHT= 266;
 canvas.width = GAME_WIDTH;
@@ -19,6 +21,7 @@ let timer = 0;
 let currentStamina = 100;
 let second = 0;
 let minuate = 0;
+let wordCnt = 0;
 let correct = false;
 let godMode = false;
 
@@ -49,8 +52,7 @@ function handlePause(e) {
 }
 
 function handlePauseBtns(e) {
-    let btnValue = e.target.innerText;
-    switch(btnValue) {
+    switch(e.target.innerText) {
         case "CONTINUE":
             pauseModal.classList.toggle("hidden");
             runFrame();
@@ -70,6 +72,7 @@ function resetGame() {
     stamina.style.width = currentStamina + '%';
     second = 0;
     minuate = 0;
+    wordCnt = 0;
     playTime.innerText = `${String(minuate).padStart(2, "0")}:${String(second).padStart(2,"0")}`;
 }
 
@@ -93,6 +96,7 @@ function handleEnter(e) {
                     o.splice(i, 1);
                     input.value = "";
                     correct = true;
+                    wordCnt++;
                 }
             });
         }
@@ -111,7 +115,7 @@ function handleEnter(e) {
 }
 
 function invincible() {
-    if(skillArr.includes(input.value)) {
+    if(skillArr.includes(input.value) && currentStamina != 0) {
         godMode = true;
         setTimeout(() => {
             godMode = false;
@@ -121,7 +125,7 @@ function invincible() {
 }
 
 function heal() {
-    if(skillArr.includes(input.value)) {
+    if(skillArr.includes(input.value) && currentStamina != 0) {
         currentStamina += 50;
         if(currentStamina > 100) {
             currentStamina = 100;
@@ -132,7 +136,7 @@ function heal() {
 }
 
 function screenFreeze() {
-    if(skillArr.includes(input.value)) {
+    if(skillArr.includes(input.value) && currentStamina != 0) {
         cancelAnimationFrame(animation);
         setTimeout(runFrame, 4000);
         skillArr = skillArr.filter(word => word != input.value);
@@ -146,12 +150,7 @@ function runFrame() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     if(timer%FRAME == 0) {
-        second++;
-        if(second == 60) {
-            minuate++;
-            second = 0;
-        }
-        playTime.innerText = `${String(minuate).padStart(2, "0")}:${String(second).padStart(2,"0")}`;
+        controlPlayTime();
 
         let index = timer/FRAME - 1;
         if(index === wordArr.length - 1) {
@@ -164,6 +163,18 @@ function runFrame() {
     }
 
     checkCollision();
+}
+
+function controlPlayTime() {
+    second++;
+    if(second == 60) {
+        minuate++;
+        second = 0;
+    }
+    playTime.innerText = `${String(minuate).padStart(2, "0")}:${String(second).padStart(2,"0")}`;
+    if(minuate === 3) {
+        openResultModal();
+    }
 }
 
 function checkCollision() {
@@ -183,12 +194,12 @@ function controlStamina(a) {
     currentStamina -= multiplier * a.word.length;
     if(currentStamina <= 0) {
         currentStamina = 0;
-        cancelAnimationFrame(animation);
+        openResultModal();
     }
     stamina.style.width = currentStamina + '%';
 }
 
-function shuffle(arr) {
+function shuffle(arr) { 
     for (let i = arr.length - 1; i > 0; i--) {
         const randomPos = Math.floor(Math.random()*(i + 1));
         const temporary = arr[i];
