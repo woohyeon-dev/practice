@@ -32,6 +32,8 @@
 }
 
 .pause-modal__buttons {
+    position: relative;
+    overflow: hidden;
     font-family: 'Boogaloo', cursive;
     font-size: 20px;
     border: 2px solid #DDC6B6;
@@ -39,6 +41,12 @@
     background-color: #262223;
     height: 35px;
     cursor: pointer;
+    transition: all .4s;
+}
+
+.pause-modal__buttons:hover {
+    background-color: #DDC6B6;
+    color: #262223;
 }
 
 .pause-modal__buttons:first-child {
@@ -85,6 +93,12 @@
     background-color: #262223;
     color: rgba(221,198,182,0.9);
     cursor: pointer;
+    transition: all .4s;
+}
+
+.result-modal__buttons:hover {
+    background-color: #DDC6B6;
+    color:#262223;
 }
 
 .hidden {
