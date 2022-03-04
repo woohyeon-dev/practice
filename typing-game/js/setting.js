@@ -17,6 +17,7 @@ function switchPlayScreen() {
     setting.style.display = "none";
     playSection.style.display = "block";
     document.querySelector(".play__input").focus();
+    addPlayScreenEvent();
     runFrame();
 }
 

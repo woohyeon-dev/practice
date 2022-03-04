@@ -38,13 +38,14 @@ class MovingWord {
     }
 }
 
-pause.addEventListener('click', handlePause);
+function addPlayScreenEvent() {
+    pause.addEventListener('click', handlePause);
+    pauseModalBtns.map(button => {
+        button.addEventListener('click', handlePauseBtns);
+    });
+    input.addEventListener('keyup', handleEnter);
+}
 
-pauseModalBtns.map(button => {
-    button.addEventListener('click', handlePauseBtns);
-});
-
-input.addEventListener('keyup', handleEnter);
 
 function handlePause(e) {
     pauseModal.classList.toggle("hidden");
@@ -117,8 +118,12 @@ function handleEnter(e) {
 function invincible() {
     if(skillArr.includes(input.value) && currentStamina != 0) {
         godMode = true;
+        stamina.style.backgroundColor = "goldenrod";
+        canvas.style.borderColor = "goldenrod";
         setTimeout(() => {
             godMode = false;
+            stamina.style.backgroundColor = "rgba(151,188,98,0.7)";
+            canvas.style.borderColor = "#DDC6B6";
         }, 4000);
         skillArr = skillArr.filter(word => word != input.value);
     }
@@ -183,6 +188,7 @@ function checkCollision() {
             o.splice(i, 1);
             if(!godMode) {
                 controlStamina(a);
+                invincible
             }
         }
         a.x += gameSpeed;
