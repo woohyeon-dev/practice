@@ -1,98 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Typing game</title>
-    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div class="board">
-        <section class="init">
-            <h1><i class="init__keyboard material-icons-sharp">keyboard</i></h1>
-            <div class="init__dynamic">
-                <p class="init__text"></p>
-            </div>
-        </section>
-
-        <section class="setting">
-            <h1>GAME SETTING</h1>
-            <form action="#" class="setting__form">
-                <fieldset>
-                    <legend>Language</legend>
-                    <div class="setting__value">
-                        <input type="radio" id="korean" name="language" checked>
-                        <label for="korean">Korean</label>
-                    </div>
-                    <div class="setting__value">
-                        <input type="radio" id="english" name="language">
-                        <label for="english">English</label>
-                    </div>
-                    <div class="setting__value">
-                        <input type="radio" id="japanese" name="language">
-                        <label for="japanese">Japanese</label>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Difficulty</legend>
-                    <div class="setting__value">
-                        <input type="radio" id="easy" name="difficulty" checked>
-                        <label for="easy">Easy</label>
-                    </div>
-                    <div class="setting__value">
-                        <input type="radio" id="normal" name="difficulty">
-                        <label for="normal">Normal</label>
-                    </div>
-                    <div class="setting__value">
-                        <input type="radio" id="hard" name="difficulty">
-                        <label for="hard">Hard</label>
-                    </div>
-                </fieldset>
-                <input type="button" class="setting__ok" value="OK"/>
-            </form>
-        </section>
-
-        <section class="play">
-            <div class="play__status-bar">
-                <i class="play__pause material-icons-outlined">pause</i>
-                <div class="play__play-time">00:00</div>
-                <div class="play__stamina">
-                    <div class="play__current-stamina"></div>
-                </div>
-            </div>
-            <canvas class="play__game-board"></canvas>
-            <div class="play__user-interface">
-                <div class="play__skill"></div>
-                <input class="play__input" type= "text" autofocus/>
-            </div>
-            
-        </section>
-
-        <div class="pause-modal hidden">
-            <div class="pause-modal__overlay"></div>
-            <div class="pause-modal__contents">
-                <button class="pause-modal__buttons">CONTINUE</button>
-                <button class="pause-modal__buttons">MENU</button>
-            </div>
+      <section class="init">
+        <h1><i class="init__keyboard material-icons-sharp">keyboard</i></h1>
+        <div class="init__dynamic">
+          <p class="init__text"></p>
         </div>
+      </section>
 
-        <div class="result-modal hidden">
-            <div class="result-modal__overlay"></div>
-            <div class="result-modal__contents">
-                <p class="result-modal__message"></p>
-                <div class="result-modal__record">
-                    <p class="result-modal__time"></p>
-                    <p class="result-modal__count"></p>
-                </div>
-                <div class="result-modal__container">
-                    <button class="result-modal__buttons">RETRY</button>
-                    <button class="result-modal__buttons">MENU</button>
-                </div>
+      <section class="setting">
+        <h1>GAME SETTING</h1>
+        <form action="#" class="setting__form">
+          <fieldset>
+            <legend>Language</legend>
+            <div class="setting__value">
+              <input type="radio" id="korean" name="language" checked />
+              <label for="korean">Korean</label>
             </div>
-        </div>
+            <div class="setting__value">
+              <input type="radio" id="english" name="language" />
+              <label for="english">English</label>
+            </div>
+            <div class="setting__value">
+              <input type="radio" id="japanese" name="language" />
+              <label for="japanese">Japanese</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Difficulty</legend>
+            <div class="setting__value">
+              <input type="radio" id="easy" name="difficulty" checked />
+              <label for="easy">Easy</label>
+            </div>
+            <div class="setting__value">
+              <input type="radio" id="normal" name="difficulty" />
+              <label for="normal">Normal</label>
+            </div>
+            <div class="setting__value">
+              <input type="radio" id="hard" name="difficulty" />
+              <label for="hard">Hard</label>
+            </div>
+          </fieldset>
+          <input type="button" class="setting__ok" value="OK" />
+        </form>
+      </section>
 
+      <section class="play">
+        <div class="play__status-bar">
+          <i class="play__pause material-icons-outlined">pause</i>
+          <div class="play__play-time">00:00</div>
+          <div class="play__stamina">
+            <div class="play__current-stamina"></div>
+          </div>
+        </div>
+        <canvas class="play__game-board"></canvas>
+        <div class="play__user-interface">
+          <div class="play__skill"></div>
+          <input class="play__input" type="text" autofocus />
+        </div>
+      </section>
+
+      <div class="pause-modal hidden">
+        <div class="pause-modal__overlay"></div>
+        <div class="pause-modal__contents">
+          <button class="pause-modal__buttons">CONTINUE</button>
+          <button class="pause-modal__buttons">MENU</button>
+        </div>
+      </div>
+
+      <div class="result-modal hidden">
+        <div class="result-modal__overlay"></div>
+        <div class="result-modal__contents">
+          <p class="result-modal__message"></p>
+          <div class="result-modal__record">
+            <p class="result-modal__time"></p>
+            <p class="result-modal__count"></p>
+          </div>
+          <div class="result-modal__container">
+            <button class="result-modal__buttons">RETRY</button>
+            <button class="result-modal__buttons">MENU</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="js/word.js"></script>
@@ -100,5 +101,5 @@
     <script src="js/setting.js"></script>
     <script src="js/play.js"></script>
     <script src="js/result.js"></script>
-</body>
+  </body>
 </html>

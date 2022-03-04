@@ -1,40 +1,40 @@
 .init {
-    width: 600px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 600px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.init__keyboard { 
-    color: #DDC6B6;
-    font-size: 130px;
-    cursor: pointer;
+.init__keyboard {
+  color: #ddc6b6;
+  font-size: 130px;
+  cursor: pointer;
 }
 
 .init__dynamic {
-    height: 48px;
-    position: relative;
+  height: 48px;
+  position: relative;
 }
 
 .init__text {
-    color: #DDC6B6;
-    font-size: 40px;
-    font-weight: bold;
+  color: #ddc6b6;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .init__text::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: -10px;
-    width: 4px;
-    height: 100%;
-    background-color: #DDC6B6;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 4px;
+  height: 100%;
+  background-color: #ddc6b6;
 }
 
-.active::after{
-    display: none;
+.active::after {
+  display: none;
 }

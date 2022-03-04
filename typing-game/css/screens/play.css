@@ -1,82 +1,82 @@
 .play {
-    width: 600px;
-    height: 400px;
-    padding: 15px;
-    display: none;
-    color: #DDC6B6;
-    font-family: 'Boogaloo', 'IBM Plex Sans KR', 'Noto Sans JP';
+  width: 600px;
+  height: 400px;
+  padding: 15px;
+  display: none;
+  color: #ddc6b6;
+  font-family: 'Boogaloo', 'IBM Plex Sans KR', 'Noto Sans JP';
 }
 
 .play__status-bar {
-    height: 30px;
-    display: flex;
+  height: 30px;
+  display: flex;
 }
 
 .play__pause {
-    border: 2px solid #DDC6B6;
-    padding: 1px;
-    cursor: pointer;
+  border: 2px solid #ddc6b6;
+  padding: 1px;
+  cursor: pointer;
 }
 
 .play__pause:hover {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .play__play-time {
-    font-size: 20px;
-    padding: 0px 4px;
-    margin: 0 15px;
-    border: 2px solid #DDC6B6;
+  font-size: 20px;
+  padding: 0px 4px;
+  margin: 0 15px;
+  border: 2px solid #ddc6b6;
 }
 
 .play__stamina {
-    width: 100%;
-    height: 30px;
-    background-color: #262223;
-    border: 2px solid #DDC6B6;
+  width: 100%;
+  height: 30px;
+  background-color: #262223;
+  border: 2px solid #ddc6b6;
 }
 
 .play__current-stamina {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(151,188,98,0.7);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(151, 188, 98, 0.7);
 }
 
 .play__game-board {
-    margin: 15px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #262223;
-    border: 2px solid #DDC6B6;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #262223;
+  border: 2px solid #ddc6b6;
 }
 
 .play__user-interface {
-    width: 570px;
-    height: 30px;
-    font-size: 18px;
-    display: flex;
+  width: 570px;
+  height: 30px;
+  font-size: 18px;
+  display: flex;
 }
 
 .play__skill {
-    width: 420px;
-    height: 100%;
-    margin-right: 15px;
-    padding: 0 0 2px 4px;
-    border: 2px solid #DDC6B6;
+  width: 420px;
+  height: 100%;
+  margin-right: 15px;
+  padding: 0 0 2px 4px;
+  border: 2px solid #ddc6b6;
 }
 
 .play__input {
-    width: 135px;
-    height: 100%;
-    border: 2px solid #DDC6B6;
-    text-align: center;
-    background-color: #262223;
-    font-weight: bold;
-    color: #DDC6B6;
+  width: 135px;
+  height: 100%;
+  border: 2px solid #ddc6b6;
+  text-align: center;
+  background-color: #262223;
+  font-weight: bold;
+  color: #ddc6b6;
 }
 
 .play__input:focus {
-    outline: none;
-    box-shadow: 0 0 5px #DDC6B6;
+  outline: none;
+  box-shadow: 0 0 5px #ddc6b6;
 }

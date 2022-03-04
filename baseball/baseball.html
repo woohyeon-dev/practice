@@ -1,70 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baseball Game</title>
-    <link rel="stylesheet" href="baseball.css">
-</head>
+    <link rel="stylesheet" href="baseball.css" />
+  </head>
 
-<body>
+  <body>
     <div class="play-board">
-        <div class="play-board__record"></div>
+      <div class="play-board__record"></div>
 
-        <div class="play-board__output">
-            <div class="play-board__result">
-                <div class="play-board__text">
-                    <div>S</div>
-                    <div>B</div>
-                    <div>O</div>
-                </div>
-                <div class="play-board__circles">
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                    <div class="play-board__circle"></div>
-                </div>
-            </div>
-            <input type="text" class="play-board__display" readonly />
+      <div class="play-board__output">
+        <div class="play-board__result">
+          <div class="play-board__text">
+            <div>S</div>
+            <div>B</div>
+            <div>O</div>
+          </div>
+          <div class="play-board__circles">
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+            <div class="play-board__circle"></div>
+          </div>
         </div>
+        <input type="text" class="play-board__display" readonly />
+      </div>
 
-        <div class="play-board__input">
-            <button class="play-board__btns">0</button>
-            <button class="play-board__btns">1</button>
-            <button class="play-board__btns">2</button>
-            <button class="play-board__btns">3</button>
-            <button class="play-board__btns">4</button>
-            <button class="play-board__btns play-board__clear">C</button>
-            <button class="play-board__btns play-board__backspace">CE</button>
-            <button class="play-board__btns">5</button>
-            <button class="play-board__btns">6</button>
-            <button class="play-board__btns">7</button>
-            <button class="play-board__btns">8</button>
-            <button class="play-board__btns">9</button>
-            <button class="play-board__btns play-board__ok">OK</button>
-        </div>
+      <div class="play-board__input">
+        <button class="play-board__btns">0</button>
+        <button class="play-board__btns">1</button>
+        <button class="play-board__btns">2</button>
+        <button class="play-board__btns">3</button>
+        <button class="play-board__btns">4</button>
+        <button class="play-board__btns play-board__clear">C</button>
+        <button class="play-board__btns play-board__backspace">CE</button>
+        <button class="play-board__btns">5</button>
+        <button class="play-board__btns">6</button>
+        <button class="play-board__btns">7</button>
+        <button class="play-board__btns">8</button>
+        <button class="play-board__btns">9</button>
+        <button class="play-board__btns play-board__ok">OK</button>
+      </div>
 
-        <div class="modal hidden">
-            <div class="modal__overlay"></div>
-            <div class="modal__contents">
-                <button class="modal__content modal__continue">CONTINUE</button>
-                <button class="modal__content modal__new">NEW GAME</button>
-            </div>
+      <div class="modal hidden">
+        <div class="modal__overlay"></div>
+        <div class="modal__contents">
+          <button class="modal__content modal__continue">CONTINUE</button>
+          <button class="modal__content modal__new">NEW GAME</button>
         </div>
+      </div>
     </div>
-    
 
     <script src="baseball.js"></script>
-</body>
-
+  </body>
 </html>
