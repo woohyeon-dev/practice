@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+@import "reset.css";
+
+body {
+    background-color: #EBEBE3;
+    display: flex;
+    padding: 70px;
+}
+
+.canvas {
+    width: 800px;
+    height: 800px;
+    margin-right: 70px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.controls {
+    font-family: 'Shadows Into Light Two', cursive;
+    display: flex;
+    flex-direction: column;
+    margin: 25px 0px;
+}
+
+.controls .controls__btns {
+    margin: 25px 10px;
+}
+
+.controls__btns button {
+    all: unset;
+    cursor: pointer;
+    background-color: white;
+    padding: 12px 0px;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+}
+
+.controls__btns button:active {
+    transform: scale(0.97);
+}
+
+.controls .controls__colors {
+    display: flex;
+    width: 660px;
+    margin: 0 10px;
+    flex-flow: row wrap;
+}
+
+.controls__colors .controls__color {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 5px 10px 5px 0px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.controls__colors .controls__color:active {
+    transform: scale(0.97);
+}
+
+.controls h1 {
+    font-size: 47px;
+    font-weight: 600;
+}
+
+.controls .controls__range {
+    font-size: 25px;
+    margin: 60px 0px 0px 10px;
+}
