@@ -11,10 +11,8 @@ resultModalBtns.map(button => {
 });
 
 function handleResultBtns(e) {
-  console.log(2);
   switch (e.target.innerText) {
     case 'RETRY':
-      console.log(1);
       resultModal.classList.toggle('hidden');
       resetGame();
       applySetting();
@@ -31,7 +29,7 @@ function handleResultBtns(e) {
 function openResultModal() {
   resultModal.classList.toggle('hidden');
   cancelAnimationFrame(animation);
-  if (minuate === 3) {
+  if (minute === 3) {
     resultMessage.innerText = 'Success!';
     resultMessage.style.color = 'rgba(151,188,98,0.7)';
   } else {

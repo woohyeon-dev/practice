@@ -22,7 +22,7 @@ let movingWordArr = [];
 let timer = 0;
 let currentStamina = 100;
 let second = 0;
-let minuate = 0;
+let minute = 0;
 let wordCnt = 0;
 let correct = false;
 let godMode = false;
@@ -73,9 +73,9 @@ function resetGame() {
   currentStamina = 100;
   stamina.style.width = currentStamina + '%';
   second = 0;
-  minuate = 0;
+  minute = 0;
   wordCnt = 0;
-  playTime.innerText = `${String(minuate).padStart(2, '0')}:${String(
+  playTime.innerText = `${String(minute).padStart(2, '0')}:${String(
     second
   ).padStart(2, '0')}`;
 }
@@ -192,13 +192,13 @@ function runFrame() {
 function controlPlayTime() {
   second++;
   if (second == 60) {
-    minuate++;
+    minute++;
     second = 0;
   }
-  playTime.innerText = `${String(minuate).padStart(2, '0')}:${String(
+  playTime.innerText = `${String(minute).padStart(2, '0')}:${String(
     second
   ).padStart(2, '0')}`;
-  if (minuate === 3) {
+  if (minute === 3) {
     openResultModal();
   }
 }
