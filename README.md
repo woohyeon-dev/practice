@@ -4,7 +4,7 @@
 Typing Game은 사용자가 왼쪽에서 오른쪽으로 지나가는 단어들을 타이핑하며 3분을 버티는 게임입니다. <br/>
 ### 2. 특징
 🔹 게임 시작화면에 typing 애니메이션이 있습니다. <br/>
-🔹 단어 목록에서 랜덤한 위치에서 생성되는 단어 생성됩니다. <br/>
+🔹 단어목록 중 랜덤한 단어가 왼쪽 벽의 랜덤한 위치에서 생성됩니다. <br/>
 🔹 언어와 난이도 선택이 가능합니다. <br/>
 🔹 체력 및 스킬(무적, 회복, 정지 3가지)이 있습니다. <br/>
 🔹 입력 성공 여부에 따라 입력창의 테두리 색상 변화됩니다. <br/>
@@ -76,7 +76,7 @@ Painting Boards는 사용자들이 다양한 붓 도구와 색을 사용하여 �
 **실행방법** : /paintjs 폴더의 **index.html** 파일을 웹 브라우저로 엽니다. <br/>
 <br />
 **실행영상** <br />
-![painting-board](https://user-images.githubusercontent.com/97883403/233924303-9f13a6a1-7f80-4ccb-88fa-f529b559a10f.gif)
+![painting-board](https://user-images.githubusercontent.com/97883403/233924303-9f13a6a1-7f80-4ccb-88fa-f529b559a10f.gif)<br />
 <br />
 <br />
 
