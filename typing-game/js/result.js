@@ -10,14 +10,17 @@ resultModalBtns.map(button => {
   button.addEventListener('click', handleResultBtns);
 });
 
+// 結果モーダルのボタンを処理する関数
 function handleResultBtns(e) {
   switch (e.target.innerText) {
+    // RETRYボタンをクリックした場合、ゲームをリスタートする
     case 'RETRY':
       resultModal.classList.toggle('hidden');
       resetGame();
       applySetting();
       runFrame();
       break;
+    // MENUボタンをクリックした場合、ゲーム設定画面に戻る
     case 'MENU':
       resultModal.classList.toggle('hidden');
       switchSettingScreen();
@@ -26,6 +29,7 @@ function handleResultBtns(e) {
   }
 }
 
+// 結果モーダルを開き、結果情報を表示する関数（結果に応じてメッセージ、時間、タイピングした単語数を表示）
 function openResultModal() {
   resultModal.classList.toggle('hidden');
   cancelAnimationFrame(animation);

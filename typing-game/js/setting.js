@@ -13,6 +13,7 @@ let gameSpeed;
 let multiplier;
 let wordArr;
 
+// 設定画面からプレイ画面に切り替える関数
 function switchPlayScreen() {
   setting.style.display = 'none';
   playSection.style.display = 'block';
@@ -21,8 +22,9 @@ function switchPlayScreen() {
   runFrame();
 }
 
+// 設定を適用する関数
 function applySetting() {
-  // language setting
+  // 言語の設定
   switch (settingValueArr[0]) {
     case 'korean':
       wordArr = JSON.parse(JSON.stringify(koreanWords));
@@ -45,7 +47,7 @@ function applySetting() {
   }
   skill.innerText = skillText + skillArr.join(', ') + ' )';
 
-  // difficulty setting
+  // ゲームレベルの設定
   switch (settingValueArr[1]) {
     case 'easy':
       gameSpeed = 1;
@@ -59,6 +61,7 @@ function applySetting() {
   }
 }
 
+// OKボタンをクリックしたときに呼ばれる関数
 function clickOkBtn(e) {
   language.forEach(node => {
     if (node.checked) {
